@@ -273,8 +273,14 @@ describe('uib-accordion', function() {
         expect(group).not.toHaveClass('panel-open');
       });
 
-      it('should create an ID from the heading', function() {
-        expect(findGroupBody(0).scope().id).toEqual('tite110000');
+      it('should generate an Id for the heading', function() {
+        var groupScope = findGroupBody(0).scope();
+        expect(groupScope.headingId).toEqual('accordiongroup-' + groupScope.$id + '-1000_tab');
+      });
+
+      it('should generate an Id for the panel', function() {
+        var groupScope = findGroupBody(0).scope();
+        expect(groupScope.panelId).toEqual('accordiongroup-' + groupScope.$id + '-1000_panel');
       });
     });
 
