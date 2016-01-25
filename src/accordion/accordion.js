@@ -91,6 +91,20 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
           }
         }
       };
+
+      if(attrs.id) {
+        scope.id = attrs.id;
+      } else {
+        var randNum = Math.floor(Math.random() * 100000);
+        if(scope.heading) {
+          // Strip whitespace, special chars, take first 3 and last 2 chars of heading, append 5 digit random number.
+          // This is a fallback to generate an id if user doesn't add an id to the uib-accordion-group
+          var formattedHeading = scope.heading.replace(/[^\w]/gi, '');
+          scope.id = formattedHeading.slice(0, 3) + formattedHeading.slice(-2) + randNum;
+        } else {
+          scope.id = '' + randNum;
+        }
+      }
     }
   };
 })
