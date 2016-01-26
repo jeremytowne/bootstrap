@@ -275,12 +275,12 @@ describe('uib-accordion', function() {
 
       it('should generate an Id for the heading', function() {
         var groupScope = findGroupBody(0).scope();
-        expect(groupScope.headingId).toEqual('accordiongroup-' + groupScope.$id + '-1000_tab');
+        expect(groupScope.headingId).toEqual('accordiongroup-' + groupScope.$id + '-1000-tab');
       });
 
       it('should generate an Id for the panel', function() {
         var groupScope = findGroupBody(0).scope();
-        expect(groupScope.panelId).toEqual('accordiongroup-' + groupScope.$id + '-1000_panel');
+        expect(groupScope.panelId).toEqual('accordiongroup-' + groupScope.$id + '-1000-panel');
       });
     });
 

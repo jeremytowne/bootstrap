@@ -93,8 +93,8 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
       };
 
       var id = 'accordiongroup-' + scope.$id + '-' + Math.floor(Math.random() * 10000);
-      scope.headingId = id + '_tab';
-      scope.panelId = id + '_panel';
+      scope.headingId = id + '-tab';
+      scope.panelId = id + '-panel';
     }
   };
 })
